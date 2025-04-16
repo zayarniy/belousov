@@ -1,0 +1,35 @@
+table {
+    border: 1px solid;
+    width: 100%;
+}
+
+#mainInfo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+#tasksView {
+    position: relative;
+    z-index: 0;
+    top: 100px;
+}
+
+.fixed-button {
+    position: fixed; /* Фиксированное позиционирование */
+    bottom: 20px;    /* Отступ от нижнего края */
+    right: 20px;     /* Отступ от правого края */
+    padding: 10px 20px; /* Внутренние отступы */
+    background-color: #007bff; /* Цвет фона */
+    color: white; /* Цвет текста */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Закругляем углы */
+    cursor: pointer; /* Курсор в виде указателя */
+    font-size: 16px; /* Размер текста */
+  }
+  
+  .fixed-button:hover {
+    background-color: #0056b3; /* Цвет фона при наведении */
+  }

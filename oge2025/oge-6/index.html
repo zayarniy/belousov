@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>6 задача ОГЭ (условный оператор). Автор: Илья Пелагеин</title>
+    <script src="libs/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="libs/Bootstrap v5.3.0/bootstrap.min.css" />-->
+    <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+-->
+    <script src="libs/sweetalert2@11"></script>
+    <!--    <script src="data.js"></script>-->
+    <script src="script.js"></script>
+</head>
+
+<body onload="load()">
+    <div class="container">
+        <div id="mainInfo" style="display:block;">
+            <div class="row lh-1 text-center align-middle" style="color:black">
+                <div class="col">
+                    <table id="info" class="table text-center caption-top thead-light table-striped">
+                          <tr>
+                            <td class="infoLabel">Попыток:</td>
+                            <td class="infoLabel">Ошибок:</td>
+                            <td class="infoLabel">Правильно:</td>
+                        </tr>
+                        <tr>
+                            <td><span id="attempt">0</span></td>
+                            <td><span id="errors">0</span></td>
+                            <td><span id="countCorrect">0</span><span> из 10</span></td>
+
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="tasksView" style="display: block;" class="row">
+            <div class="col">
+                <h2>Программа с условным оператором</h2>
+
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/001.png" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+                            <br>
+                            (1, 2); (11, 2); (1, 12); (11, 12); (–11, –12); (–11, 12); (–12, 11); (10, 10); (10, 5).
+                            <br>
+                            Сколько было запусков, при которых программа напечатала «YES»?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="001" type="text"><button id="btn001"
+                                class="btn btn-primary" onclick=check(this)>Проверить</button>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/002.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+
+                            (1, 13); (14, 2); (1, 12); (11, 12); (–14, –14); (–11, 13); (–4, 11); (2, 9); (8, 6).
+
+                            Сколько было запусков, при которых программа напечатала «YES»?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="002" type="text"><button class="btn btn-primary"
+                                id="btn002" onclick=check(this)>Проверить</button>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/003.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+
+                            (8, 8); (9, 6); (4, 7); (6, 6); (–9, –2); (–5, 9); (–10, 10); (6, 9); (10, 6).
+
+                            Сколько было запусков, при которых программа напечатала «YES»?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="003" type="text"><button class="btn btn-primary"
+                                id="btn003" onclick=check(this)>Проверить</button>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/004.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+
+                            (8, 8); (9, 6); (4, 7); (6, 6); (–9, –2); (–5, 9); (–10, 10); (6, 9); (10, 6).
+
+                            Сколько было запусков, при которых программа напечатала «NO»?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="004" type="text"><button class="btn btn-primary"
+                                id="btn004" onclick=check(this)>Проверить</button>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/005.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+
+                            (9, 9); (9, 10); (8, 5); (11, 6); (–11, 10); (–5, 9); (–10, 10); (4, 5); (8, 6).
+
+                            Сколько было запусков, при которых программа напечатала «NO»?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="005" type="text"><button class="btn btn-primary"
+                                id="btn005" onclick=check(this)>Проверить</button>
+                        </td>
+                    </tr>
+                </table>
+
+
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/006.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+                            <br>
+                            (9, 9); (9, 10); (8, 5); (11, 6); (–11, 10); (–5, 9); (–10, 10); (4, 5); (8, 6).
+                            <br>
+                            Сколько было запусков, при которых программа напечатала «YES»?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="006" type="text"><button class="btn btn-primary"
+                                id="btn006" onclick=check(this)>Проверить</button>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/007.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+                            <br>
+                            (6, 4); (7, 8); (8, 5); (5, 6); (–11, 10); (–5, 7); (–2, 2); (4, 5); (8, 6).
+                            <br>
+                            Сколько было запусков, при которых программа напечатала «YES»?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="007" type="text"><button class="btn btn-primary"
+                                id="btn007" onclick=check(this)>Проверить</button>
+                        </td>
+                    </tr>
+                </table>
+
+
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/008.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+                            <br>
+                            (6, 4); (7, 8); (8, 5); (5, 6); (11, 10); (–5, 7); (–2, 2); (4, 5); (8, 6).
+                            <br>
+                            Сколько было запусков, при которых программа напечатала «YES»?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="008" type="text"><button class="btn btn-primary"
+                                id="btn008" onclick=check(this)>Проверить</button>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/009.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+
+                            (6, 4); (7, 8); (12, 10); (5, 6); (11, 10); (–5, 7); (–2, 2); (4, 5); (8, 6).
+
+                            Сколько было запусков, при которых программа напечатала «NO»?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="009" type="text"><button class="btn btn-primary"
+                                id="btn009" onclick=check(this)>Проверить</button>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/010.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+
+                            (3, 4); (5, 4); (–2, 1); (5, 6); (7, 8); (–5, 5); (–2, 2); (4, 3); (3, –8).
+
+                            Сколько было запусков, при которых программа напечатала «NO»?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="010" type="text"><button class="btn btn-primary"
+                                id="btn010" onclick=check(this)>Проверить</button>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/011.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+                            <br>
+                            (6, 8); (3, 5); (–7, 2); (7, 7); (9, 8); (–1, 3); (–4, 5); (6, 9); (2, –1).
+                            <br>
+                            Сколько было запусков, при которых программа напечатала «YES»?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="011" type="text"><button class="btn btn-primary"
+                                id="btn011" onclick=check(this)>Проверить</button>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/012.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="012" type="text"><button class="btn btn-primary"
+                                id="btn012" onclick=check(this)>Проверить</button>
+
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+                            <br>
+                            (9, 10); (11, 5); (–2, 8); (9, 9); (2, 8); (–1, 3); (–4, 5); (10, 9); (4, –3).
+                            <br>
+                            Сколько было запусков, при которых программа напечатала «YES»?
+                        </td>
+                    </tr>
+                </table>
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/013.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="013" type="text"><button class="btn btn-primary"
+                                id="btn013" onclick=check(this)>Проверить</button>
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+                            <br>
+                            (9, 10); (11, 5); (–2, 8); (9, 9); (2, 8); (–1, 3); (–4, 5); (10, 9); (4, –3).
+                            <br>
+                            Сколько было запусков, при которых программа напечатала «NO»?
+                        </td>
+                    </tr>
+                </table>
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/014.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+                            <br>
+                            (10, 10); (10, 6); (–4, 8); (2, 9); (12, 7); (–11, 4); (–8, 13); (10, 9); (11, 11).
+                            <br>
+                            Сколько было запусков, при которых программа напечатала «NO»?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="014" type="text"><button class="btn btn-primary"
+                                id="btn014" onclick=check(this)>Проверить</button>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/015.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+                            <br>
+                            (10, 6); (7, 6); (–4, 3); (2, 9); (12, 7); (–11, 4); (–8, 13); (10, 9); (6, 5).
+                            <br>
+                            Сколько было запусков, при которых программа напечатала «NO»?
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="016" type="text"><button class="btn btn-primary"
+                                id="btn016" onclick=check(this)>Проверить</button>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/016.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+                            <br>
+                            (3, –3); (7, 6); (–4, 1); (2, 9); (12, 7); (–11, 4); (–8, 13); (10, 9); (6, 5).
+                            <br>
+                            Сколько было запусков, при которых программа напечатала «YES»?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="016" type="text"><button class="btn btn-primary"
+                                id="btn016" onclick=check(this)>Проверить</button>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/017.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+                            <br>
+                            (5, 3); (2, 4); (–1, 10); (5, 7); (5, 4); (–11, 4); (9, 13); (7, 9); (6, 8).
+                            <br>
+                            Сколько было запусков, при которых программа напечатала «YES»?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="017" type="text"><button class="btn btn-primary"
+                                id="btn017" onclick=check(this)>Проверить</button>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/018.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+                            <br>
+                            (7, 3); (2, 7); (6, 10); (5, 3); (5, 4); (–11, 4); (–8, 9); (7, 3); (9, 1).
+                            <br>
+                            Сколько было запусков, при которых программа напечатала «YES»?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="018" type="text"><button class="btn btn-primary"
+                                id="btn018" onclick=check(this)>Проверить</button>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/019.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+
+                            (–2, 3); (2, 5); (0, 3); (5, –3); (5, 4); (11, 4); (8, –6); (7, 3); (9, 1).
+
+                            Сколько было запусков, при которых программа напечатала «YES»?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="019" type="text"><button class="btn btn-primary"
+                                id="btn019" onclick=check(this)>Проверить</button>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/020.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+
+                            (–2, 3); (2, 5); (0, 3); (5, –3); (5, 4); (11, 4); (8, –6); (1, 7); (9, 1).
+
+                            Сколько было запусков, при которых программа напечатала «NO»?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="020" type="text"><button class="btn btn-primary"
+                                id="btn020" onclick=check(this)>Проверить</button>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/027.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+
+                            (1, 2); (11, 2); (1, 12); (11, 12); (−11, −12); (−11, 12); (−12, 11); (10, 10); (10, 5).
+
+                            Укажите количество целых значений параметра A, при которых для указанных входных данных
+                            программа напечатает «NO» три раза.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="027" type="text"><button class="btn btn-primary"
+                                id="btn027" onclick=check(this)>Проверить</button>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="table caption-top thead-light table-striped">
+                    <tr>
+
+                        <td>Ниже приведена программа, записанная на пяти языках программирования.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="programs/028.png" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Было проведено 9 запусков программы, при которых в качестве значений переменных s и t
+                            вводились
+                            следующие пары чисел:
+
+                            (13, 2); (11, 12); (–12, 12); (2, –2); (–10, –10); (6, –5); (2, 8); (9, 10); (1, 13).
+
+                            Укажите наименьшее целое значение параметра A, при котором для указанных входных данных
+                            программа напечатает «NO» восемь раз.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ответ:<input class="form-control" id="028" type="text"><button class="btn btn-primary"
+                                id="btn028" onclick=check(this)>Проверить</button>
+                        </td>
+
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+        <!--
+        <div class="col-8">
+            <input type="text" class="form-control" placeholder="Фамилия и имя" id="name" />
+        </div -->
+                <button class="btn btn-primary fixed-button" onclick="saveToServer()">Сохранить</button>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!--<script src="libs/Bootstrap v5.3.0/bootstrap.bundle.min.js"></script>-->
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>-->
+
+</body>
+
+</html>

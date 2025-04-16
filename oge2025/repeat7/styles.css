@@ -1,0 +1,35 @@
+table {
+    #width: 100%;
+    border-collapse: collapse; /* Объединяет границы ячеек */
+}
+
+th, td {
+    border: 1px solid black; /* Добавляет рамки к ячейкам */
+    padding: 8px; /* Добавляет отступы внутри ячеек */
+    text-align:center; /* Выравнивает текст по левому краю */
+}
+
+th {
+    background-color: #f2f2f2; /* Добавляет фон для заголовков */
+}
+
+.textarea1
+{
+    height: 100px;
+}
+
+.crossword td
+{
+    width: 10px;
+    height: 10px;
+    border: 0px solid black;
+    text-align: center;
+    font-size: 12px;
+}
+
+.crossword .alpha-cell
+{
+    border: 1px solid black;
+}
+
+
